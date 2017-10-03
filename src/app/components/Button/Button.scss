@@ -1,0 +1,19 @@
+.Button {
+    display: inline-flex;
+
+    padding: 10px 20px;
+
+    cursor: pointer;
+    transition: background 300ms;
+
+    color: #fff;
+    background: palevioletred;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background: darken(palevioletred, 5%);
+    }
+}

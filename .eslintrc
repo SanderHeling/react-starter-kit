@@ -1,0 +1,37 @@
+{
+    "extends": ["airbnb"],
+    "parser": "babel-eslint",
+    "plugins": ["prettier"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": true,
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "prefer-const": "warn",
+        "arrow-parens": ["error", "as-needed"],
+        "no-return-assign": 0,
+        "comma-dangle": ["error", {
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
+            "functions": "ignore"
+        }],
+
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "tabWidth": 4,
+                "trailingComma": "es5"
+            }
+        ],
+
+        "react/jsx-indent-props": [2, 4],
+        "react/jsx-filename-extension": 0,
+        "react/jsx-indent": [2, 4],
+        "react/no-array-index-key": 0,
+    }
+}
