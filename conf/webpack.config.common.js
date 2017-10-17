@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const appSrc = path.resolve(__dirname, '../src/app/');
+const appSrc = path.resolve(__dirname, '../src/');
 
 module.exports = {
     entry: {
