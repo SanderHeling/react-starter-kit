@@ -67,7 +67,7 @@
   },
   "jest": {
     "setupFiles": [
-      "./src/app/polyfill.js"
+      "./src/polyfill.js"
     ],
     "setupTestFrameworkScriptFile": "./src/__tests__/jest.setup.js",
     "testPathIgnorePatterns": [
