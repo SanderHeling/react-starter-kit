@@ -13,7 +13,7 @@ exports[`Storyshots Button with content 1`] = `
       style={Object {}}
     >
       <div
-        className="Button "
+        className="Button"
         onClick={[Function]}
         role="button"
         tabIndex={0}

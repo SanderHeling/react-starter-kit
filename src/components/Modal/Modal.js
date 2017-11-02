@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import cc from 'classcat';
 
 import styles from './Modal.scss';
 
@@ -20,9 +21,13 @@ class Modal extends React.Component {
 
     render() {
         const { children, className, ...other } = this.props;
-        const classNames = `${styles.Modal} ${className}`;
         return ReactDOM.createPortal(
-            <div className={classNames} role="button" tabIndex={0} {...other}>
+            <div
+                className={cc([styles.Modal, className])}
+                role="button"
+                tabIndex={0}
+                {...other}
+            >
                 <div className={styles.Dialog}>{children}</div>
             </div>,
             this.el
