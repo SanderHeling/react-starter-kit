@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
+import './app.scss';
 
 const App = () => (
     <div>
