@@ -25,7 +25,8 @@
         "babel-preset-react": "6.24.1",
         "babel-preset-stage-2": "6.24.1",
         "css-loader": "0.28.7",
-        "enzyme": "3.0.0",
+        "enzyme": "3.1.0",
+        "enzyme-adapter-react-16": "1.0.3",
         "eslint": "4.7.2",
         "eslint-config-airbnb": "15.1.0",
         "eslint-loader": "1.9.0",
@@ -65,9 +66,13 @@
         "react-dom": "16.0.0"
     },
     "jest": {
-        "setupFiles": ["./src/polyfill.js"],
+        "setupFiles": [
+            "./src/polyfill.js"
+        ],
         "setupTestFrameworkScriptFile": "./src/__tests__/jest.setup.js",
-        "testPathIgnorePatterns": ["./src/__tests__/jest.setup.js"],
+        "testPathIgnorePatterns": [
+            "./src/__tests__/jest.setup.js"
+        ],
         "moduleNameMapper": {
             "\\.(css|scss)$": "identity-obj-proxy"
         }
