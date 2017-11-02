@@ -24,8 +24,8 @@ describe('<Modal />', () => {
     });
 
     it('should render nothing by default', () => {
-        // This test is not yet function. First we need Portal's to
-        // be supported by ezyme
+        // This test is not yet functional. First we need Portal's to
+        // be supported by enzyme
         const divs = modal().find('div');
         expect(divs.length).toEqual(0);
     });
