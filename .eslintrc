@@ -54,5 +54,7 @@
         "react/jsx-filename-extension": 0,
         "react/jsx-indent": [2, 4],
         "react/no-array-index-key": 0,
+
+        "jsx-a11y/media-has-caption": 0
     }
 }
