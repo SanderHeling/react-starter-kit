@@ -10,10 +10,8 @@
         "test": "jest",
         "test-coverage": "jest --coverage",
         "tdd": "jest --watchAll",
-        "webpack:dev":
-            "webpack-dev-server --config ./conf/webpack.config.dev.js",
-        "build":
-            "yarn run clean && webpack --config ./conf/webpack.config.prod.js",
+        "webpack:dev": "webpack-dev-server --config ./conf/webpack.config.dev.js",
+        "build": "yarn run clean && webpack --config ./conf/webpack.config.prod.js",
         "styleguide": "styleguidist server",
         "styleguide:build": "styleguidist build",
         "start": "npm run webpack:dev & npm run styleguide"
