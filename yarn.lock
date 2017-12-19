@@ -1517,7 +1517,7 @@ classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
-classtr@^0.0.1:
+classtr@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/classtr/-/classtr-0.0.1.tgz#c96f133197704eda85667ae63400d9b4b63e97b0"
 
