@@ -59,15 +59,19 @@
     },
     "dependencies": {
         "babel-polyfill": "6.26.0",
-        "classcat": "1.0.1",
+        "classtr": "0.0.1",
         "prop-types": "15.6.0",
         "react": "16.0.0",
         "react-dom": "16.0.0"
     },
     "jest": {
-        "setupFiles": ["./src/polyfill.js"],
+        "setupFiles": [
+            "./src/polyfill.js"
+        ],
         "setupTestFrameworkScriptFile": "./src/__tests__/jest.setup.js",
-        "testPathIgnorePatterns": ["./src/__tests__/jest.setup.js"],
+        "testPathIgnorePatterns": [
+            "./src/__tests__/jest.setup.js"
+        ],
         "moduleNameMapper": {
             "\\.(css|scss)$": "identity-obj-proxy"
         }

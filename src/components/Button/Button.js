@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cc from 'classcat';
+import cs from 'classtr';
 
 import styles from './Button.scss';
 
 const Button = ({ className, ...other }) => (
     <div
-        className={cc([styles.Button, className])}
+        className={cs([styles.Button, className])}
         role="button"
         tabIndex={0}
         {...other}
