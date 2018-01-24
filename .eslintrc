@@ -5,42 +5,14 @@
     "env": {
         "browser": true,
         "node": true,
-        "jest": true,
+        "jest": true
     },
     "rules": {
-        "indent": ["error", 4, {
-            SwitchCase: 1,
-            VariableDeclarator: 1,
-            outerIIFEBody: 1,
-            FunctionDeclaration: {
-                parameters: 1,
-                body: 1
-            },
-            FunctionExpression: {
-                parameters: 1,
-                body: 1
-            },
-            CallExpression: {
-                arguments: 1
-            },
-            ArrayExpression: 1,
-            ObjectExpression: 1,
-            ImportDeclaration: 1,
-            flatTernaryExpressions: false,
-            ignoredNodes: ['JSXElement', 'JSXElement *']
-        }],
-
+        "indent": 0,
+        "comma-dangle": 0,
         "prefer-const": "warn",
         "arrow-parens": ["error", "as-needed"],
         "no-return-assign": 0,
-        "comma-dangle": ["error", {
-            "arrays": "always-multiline",
-            "objects": "always-multiline",
-            "imports": "always-multiline",
-            "exports": "always-multiline",
-            "functions": "ignore"
-        }],
-
         "prettier/prettier": [
             "error",
             {
@@ -55,6 +27,14 @@
         "react/jsx-indent": [2, 4],
         "react/no-array-index-key": 0,
 
-        "jsx-a11y/media-has-caption": 0
+        "jsx-a11y/media-has-caption": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                "components": ["Link"],
+                "specialLink": ["to"]
+            }
+        ]
     }
 }
