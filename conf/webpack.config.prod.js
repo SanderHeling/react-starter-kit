@@ -6,10 +6,9 @@ const commonConfig = require('./webpack.config.common.js'); // the settings that
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-/**
- * Webpack Constants
- */
-const ENV = 'production';
+const getEnv = require('./env');
+
+const env = getEnv('production');
 
 /**
  * Webpack configuration
@@ -26,11 +25,7 @@ module.exports = webpackMerge(commonConfig, {
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin('static/css/[name].[hash].css'),
-        new webpack.DefinePlugin({
-            'process.env': {
-                ENV: JSON.stringify(ENV),
-            },
-        }),
+        new webpack.DefinePlugin(env),
         new webpack.LoaderOptionsPlugin({
             htmlLoader: {
                 minimize: false,

@@ -10,7 +10,6 @@ React starter kit using React 16.
 - Tests for Modal component
 - Custom Font
 
-
 ## Install
 
 ```bash
@@ -39,3 +38,15 @@ $ yarn build
 ```
 
 When the build is ready you can find the files in the dist/ folder.
+
+## Environment variables
+You can set the environment variables in the files `development.js` and `production.js` located in the env directory. The env files need to export an object.
+
+```js
+module.exports = {
+    apiUrl: 'http://localhost:8000/api/',
+    ...
+};
+```
+
+When you want to use the env variables in your application you can get them by using `process.env`.

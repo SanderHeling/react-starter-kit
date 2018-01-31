@@ -1,9 +1,14 @@
+const webpack = require('webpack');
 const path = require('path');
 
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 const commonConfig = require('./webpack.config.common.js'); // the settings that are common to prod and dev
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const getEnv = require('./env');
+
+const env = getEnv('development');
 
 /**
  * Webpack configuration
@@ -18,7 +23,10 @@ module.exports = webpackMerge(commonConfig, {
         chunkFilename: '[id].chunk.js',
     },
 
-    plugins: [new ExtractTextPlugin('[name].css')],
+    plugins: [
+        new webpack.DefinePlugin(env),
+        new ExtractTextPlugin('[name].css'),
+    ],
 
     devServer: {
         port: 8080,
