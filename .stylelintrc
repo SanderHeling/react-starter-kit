@@ -5,7 +5,14 @@
         "indentation": 4,
         "declaration-empty-line-before": null,
         "at-rule-no-unknown": null,
-        "order/order": ["custom-properties", "declarations", "rules", "at-rules"],
+        "order/order": [
+            {"type":"at-rule", "name": "extend"},
+            {"type":"at-rule", "name": "include", "hasBlock": false},
+            "custom-properties",
+            "declarations",
+            "rules",
+            "at-rules"
+        ],
         "order/properties-order": [
             {
                 "emptyLineBefore": "always",
