@@ -25,7 +25,6 @@ module.exports = {
                 include: appSrc,
                 options: {
                     eslintPath: require.resolve('eslint'),
-                    // configFile: path.resolve(__dirname, '../.eslintrc'),
                 },
             },
             {
