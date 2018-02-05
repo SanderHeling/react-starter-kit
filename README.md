@@ -6,9 +6,7 @@ React starter kit using React 16.
 - React (https://facebook.github.io/react/)
 
 ## TODO
-- Scss variables.
 - Tests for Modal component
-- Custom Font
 
 ## Install
 
