@@ -4,7 +4,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
-import './app.scss';
+import './index.scss';
 
 const App = () => (
     <div>

@@ -10,7 +10,7 @@ const appSrc = path.resolve(__dirname, '../src/');
 module.exports = {
     entry: {
         vendor: path.resolve(appSrc, 'vendor.js'),
-        app: path.resolve(appSrc, 'app.js'),
+        app: path.resolve(appSrc, 'index.js'),
     },
 
     resolve: {
