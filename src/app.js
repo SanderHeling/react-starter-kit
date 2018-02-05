@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
@@ -8,6 +9,9 @@ import './app.scss';
 const App = () => (
     <div>
         <h1>App</h1>
+        <p>
+            Is is time for <FontAwesomeIcon icon="coffee" /> yet?
+        </p>
         <Button>Button</Button>
         <Modal>
             <h1>This is a modal</h1>
