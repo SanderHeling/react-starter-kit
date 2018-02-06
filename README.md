@@ -41,7 +41,7 @@ When the build is ready you can find the files in the dist/ folder.
 You can set the environment variables in the files `development.js` and `production.js` located in the env directory. When you change the env file you need to run `yarn start` again. The env files need to export an object. When you want to use the env variables in your application you can get them by using `process.env`.
 
 ```js
-// /env/development.js
+// development.js
 module.exports = {
     apiUrl: 'http://localhost:8000/api/',
     ...
