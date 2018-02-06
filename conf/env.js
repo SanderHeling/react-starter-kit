@@ -3,7 +3,8 @@ const path = require('path');
 
 const envDir = path.resolve(__dirname, '../env/');
 
-function getEnv(env) {
+function getEnv(curEnv) {
+    const env = process.env.ENV || curEnv;
     let envConfig = { NODE_ENV: JSON.stringify(env) };
     const envFileUrl = path.resolve(envDir, `${env}.js`);
 

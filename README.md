@@ -11,12 +11,12 @@ React starter kit using React 16.
 ## Install
 
 ```bash
-$ yarn
+yarn
 ```
 
 ## Run
 ```bash
-$ yarn start
+yarn start
 ```
 
 Go to `http://localhost:8080/` and try it out.
@@ -25,26 +25,31 @@ Go to `http://localhost:8080/` and try it out.
 Contains only one component test for now, just an example how testing works.
 
 ```bash
-$ yarn test
+yarn test
 ```
 
 ## [WIP] Build
 Build a production ready version
 
 ```bash
-$ yarn build
+yarn build
 ```
 
 When the build is ready you can find the files in the dist/ folder.
 
 ## Environment variables
-You can set the environment variables in the files `development.js` and `production.js` located in the env directory. The env files need to export an object.
+You can set the environment variables in the files `development.js` and `production.js` located in the env directory. When you change the env file you need to run `yarn start` again. The env files need to export an object. When you want to use the env variables in your application you can get them by using `process.env`.
 
 ```js
+// /env/development.js
 module.exports = {
     apiUrl: 'http://localhost:8000/api/',
     ...
 };
 ```
 
-When you want to use the env variables in your application you can get them by using `process.env`.
+It's also possible to load a different environment config (e.g. `mock.js`). Create the file in the env directory and run the application again with an extra ENV setting that has the same name.
+
+```bash
+ENV=mock yarn start
+```
