@@ -28,7 +28,7 @@ Contains only one component test for now, just an example how testing works.
 yarn test
 ```
 
-## [WIP] Build
+## Build
 Build a production ready version
 
 ```bash
