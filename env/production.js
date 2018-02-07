@@ -1,3 +1,10 @@
 module.exports = {
-    apiUrl: 'https://prod/api/',
+    webpack: {
+        output: {
+            publicPath: '/',
+        },
+    },
+    app: {
+        apiUrl: 'https://prod/api/',
+    },
 };

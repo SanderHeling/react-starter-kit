@@ -5,28 +5,34 @@ const envDir = path.resolve(__dirname, '../env/');
 
 function getEnv(curEnv) {
     const env = process.env.ENV || curEnv;
-    let envConfig = { NODE_ENV: JSON.stringify(env) };
+    const envConfig = { app: { NODE_ENV: JSON.stringify(env) }, webpack: {} };
     const envFileUrl = path.resolve(envDir, `${env}.js`);
 
-    if (fs.existsSync(envFileUrl)) {
-        // Disable the global require rule here because require allows us to
-        // import an js file, when using a js file for env settings we can do
-        // dynamically set some vars
-        // eslint-disable-next-line
-        const rawSettings = require(envFileUrl);
+    if (!fs.existsSync(envFileUrl)) {
+        return envConfig;
+    }
 
-        const settings = Object.keys(rawSettings).reduce(
-            (curEnvVar, key) =>
-                Object.assign({}, curEnvVar, {
-                    [key]: JSON.stringify(rawSettings[key]),
+    // Disable the global require rule here because require allows us to
+    // import an js file, when using a js file for env settings we can do
+    // dynamically set some vars
+    // eslint-disable-next-line
+    const rawSettings = require(envFileUrl);
+    let envSettings = {};
+
+    if (rawSettings.env) {
+        envSettings = Object.keys(rawSettings.env).reduce(
+            (envVar, key) =>
+                Object.assign({}, envVar, {
+                    [key]: JSON.stringify(rawSettings.env[key]),
                 }),
             {}
         );
-
-        envConfig = Object.assign({}, envConfig, settings);
+        envConfig.app = Object.assign({}, envConfig.app, envSettings);
     }
 
-    return { 'process.env': envConfig };
+    envConfig.webpack = rawSettings.webpack;
+
+    return envConfig;
 }
 
 module.exports = getEnv;

@@ -14,40 +14,44 @@ const env = getEnv('production');
 /**
  * Webpack configuration
  */
-module.exports = webpackMerge(commonConfig, {
-    output: {
-        path: path.resolve(__dirname, '../dist'),
-        publicPath: '/',
-        filename: 'static/js/[name].[hash].js',
-        chunkFilename: 'static/css/[id].[hash].chunk.js',
-    },
+module.exports = webpackMerge(
+    commonConfig,
+    {
+        output: {
+            path: path.resolve(__dirname, '../dist'),
+            publicPath: '/',
+            filename: 'static/js/[name].[hash].js',
+            chunkFilename: 'static/css/[id].[hash].chunk.js',
+        },
 
-    plugins: [
-        new webpack.NoEmitOnErrorsPlugin(),
-        new UglifyJsPlugin({
-            parallel: true,
-            cache: true,
-            uglifyOptions: {
-                ecma: 8,
-                compress: {
-                    warnings: false,
-                    comparisons: false,
+        plugins: [
+            new webpack.NoEmitOnErrorsPlugin(),
+            new UglifyJsPlugin({
+                parallel: true,
+                cache: true,
+                uglifyOptions: {
+                    ecma: 8,
+                    compress: {
+                        warnings: false,
+                        comparisons: false,
+                    },
+                    mangle: {
+                        safari10: true,
+                    },
+                    output: {
+                        comments: false,
+                        ascii_only: true,
+                    },
                 },
-                mangle: {
-                    safari10: true,
+            }),
+            new ExtractTextPlugin('static/css/[name].[hash].css'),
+            new webpack.DefinePlugin(env.app),
+            new webpack.LoaderOptionsPlugin({
+                htmlLoader: {
+                    minimize: false,
                 },
-                output: {
-                    comments: false,
-                    ascii_only: true,
-                },
-            },
-        }),
-        new ExtractTextPlugin('static/css/[name].[hash].css'),
-        new webpack.DefinePlugin(env),
-        new webpack.LoaderOptionsPlugin({
-            htmlLoader: {
-                minimize: false,
-            },
-        }),
-    ],
-});
+            }),
+        ],
+    },
+    env.webpack
+);
