@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
-import Button from './components/Button/Button';
-import Modal from './components/Modal/Modal';
+import Button from './components/Button';
+import Modal from './components/Modal';
 import './index.scss';
 
 const App = () => (
