@@ -9,10 +9,11 @@
     },
     "rules": {
         "indent": 0,
-        "comma-dangle": 0,
         "prefer-const": "warn",
         "arrow-parens": ["error", "as-needed"],
         "no-return-assign": 0,
+        "import/order": [2, {"newlines-between": "always-and-inside-groups"}],
+
         "prettier/prettier": [
             "error",
             {
@@ -26,6 +27,16 @@
         "react/jsx-filename-extension": 0,
         "react/jsx-indent": [2, 4],
         "react/no-array-index-key": 0,
+        "react/no-typos": 0,
+        "react/sort-prop-types": [2, {
+            "callbacksLast": true,
+            "requiredFirst": true,
+            "sortShapeProp": true
+        }],
+        "react/jsx-sort-props": [2, {
+            "callbacksLast": true,
+            "shorthandFirst": true
+        }],
 
         "jsx-a11y/media-has-caption": 0,
         "jsx-a11y/click-events-have-key-events": 0,
