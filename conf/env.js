@@ -19,11 +19,11 @@ function getEnv(curEnv) {
     const rawSettings = require(envFileUrl);
     let envSettings = {};
 
-    if (rawSettings.env) {
-        envSettings = Object.keys(rawSettings.env).reduce(
+    if (rawSettings.app) {
+        envSettings = Object.keys(rawSettings.app).reduce(
             (envVar, key) =>
                 Object.assign({}, envVar, {
-                    [key]: JSON.stringify(rawSettings.env[key]),
+                    [key]: JSON.stringify(rawSettings.app[key]),
                 }),
             {}
         );

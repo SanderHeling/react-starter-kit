@@ -1,6 +1,6 @@
-const webpack = require('webpack');
 const path = require('path');
 
+const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -9,7 +9,6 @@ const appSrc = path.resolve(__dirname, '../src/');
 
 module.exports = {
     entry: {
-        vendor: path.resolve(appSrc, 'vendor.js'),
         app: path.resolve(appSrc, 'index.js'),
     },
 
@@ -95,13 +94,16 @@ module.exports = {
         ],
     },
 
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
+
     plugins: [
         new HtmlWebpackPlugin({
             inject: true,
             template: path.join(__dirname, '../src/index.html'),
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
         }),
     ],
 
