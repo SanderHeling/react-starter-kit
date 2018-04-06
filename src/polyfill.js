@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+
 // React depends on requestAnimationFrame (even in test environments).
 // Add a simple shim for testing environments.
 global.requestAnimationFrame = callback => {
