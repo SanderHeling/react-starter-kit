@@ -47,7 +47,7 @@ module.exports = webpackMerge(
                 },
             }),
             new ExtractTextPlugin('static/css/[name].[hash].css'),
-            new webpack.DefinePlugin(env.app),
+            new webpack.DefinePlugin({ 'process.env': env.app }),
             new webpack.LoaderOptionsPlugin({
                 htmlLoader: {
                     minimize: false,
